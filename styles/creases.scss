@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(104, 130, 104);
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.postercontainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.poster {
+    min-width: 15rem;
+    max-width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
+
+    perspective: 1000px;
+
+    &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+
+        width: 100%;
+        height: 100%;
+
+        content: "";
+
+        background-image:
+            linear-gradient(265deg, rgba(0, 0, 0, 0.2), transparent 15%),
+            linear-gradient(5deg, rgba(0, 0, 0, 0.2), transparent 15%),
+            linear-gradient(-5deg, rgba(0, 0, 0, 0.1), transparent 15%),
+            linear-gradient(5deg, rgba(0, 0, 0, 0.1), transparent 15%),
+            linear-gradient(-265deg, rgba(0, 0, 0, 0.2), transparent 15%),
+            linear-gradient(-5deg, rgba(0, 0, 0, 0.2), transparent 15%),
+            linear-gradient(266deg, rgba(0, 0, 0, 0.2), transparent 15%);
+
+        background-size:
+            50% 33.3333%,
+            50% 33.3333%,
+            50% 33.3333%,
+            50% 33.3333%,
+            50% 33.3333%,
+            50% 33.3333%,
+            50% 33.3333%;
+        background-position:
+            left top,
+            left top,
+            right top,
+            left center,
+            right center,
+            right center,
+            left bottom;
+    }
+
+    &__img {
+        margin: 1rem;
+        width: 90%;
+        height: 95%;
+        z-index: 1;
+        filter: sepia(30%) saturate(50%);
+    }
+}
